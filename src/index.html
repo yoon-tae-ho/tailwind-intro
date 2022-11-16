@@ -6,6 +6,116 @@
     <link href="/dist/output.css" rel="stylesheet" />
     <script defer src="./assets/fontawesome/js/solid.min.js"></script>
     <script defer src="./assets/fontawesome/js/fontawesome.min.js"></script>
+    <script>
+      window.onload = () => {
+        const mobileMenuIcon = document.getElementById("mobile-menu-button");
+        mobileMenuIcon.addEventListener("click", () => {
+          if (mobileMenuIcon.classList.contains("open"))
+            mobileMenuIcon.classList.remove("open");
+          else mobileMenuIcon.classList.add("open");
+        });
+
+        const ticketsMenuIcon = document.getElementById("tickets-menu-item");
+        ticketsMenuIcon.addEventListener("click", () => {
+          if (ticketsMenuIcon.classList.contains("open"))
+            ticketsMenuIcon.classList.remove("open");
+          else ticketsMenuIcon.classList.add("open");
+        });
+      };
+    </script>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <header class="text-zinc-200">
+        <nav
+          class="sticky top-0 flex justify-between bg-gradient-to-r from-rose-500 to-pink-500"
+        >
+          <div class="flex items-center gap-2 p-2">
+            <img src="./assets/images/logo-inverted.png" width="50" />
+            <div class="text-2xl font-bold">
+              <span>tw:</span><span class="text-sky-900">mf</span>
+            </div>
+          </div>
+          <div class="my-auto block cursor-pointer pr-4 md:hidden">
+            <div id="mobile-menu-button" class="group peer cursor-pointer">
+              <div
+                class="relative top-0 h-1 w-8 rounded-full bg-zinc-200 transition-all group-open:top-2 group-open:rotate-45"
+              ></div>
+              <div
+                class="my-1 h-1 w-8 rounded-full bg-zinc-200 opacity-100 transition-all group-open:opacity-0"
+              ></div>
+              <div
+                class="relative top-0 h-1 w-8 rounded-full bg-zinc-200 transition-all group-open:-top-2 group-open:-rotate-45"
+              ></div>
+            </div>
+            <div
+              class="absolute top-[62px] left-0 hidden w-full bg-gradient-to-r from-rose-500 to-pink-500 peer-open:block"
+            >
+              <div
+                class="relative flex cursor-pointer items-center justify-center p-4 font-bold text-pink-200 transition-colors ease-in-out hover:bg-white/10 hover:text-zinc-200"
+              >
+                <span>Home</span>
+              </div>
+              <div
+                class="relative flex cursor-pointer items-center justify-center p-4 font-bold text-pink-200 transition-colors ease-in-out hover:bg-white/10 hover:text-zinc-200"
+              >
+                <span>Lineup</span>
+              </div>
+              <div
+                id="tickets-menu-item"
+                class="group relative cursor-pointer text-pink-200 transition-colors ease-in-out hover:bg-white/10 hover:text-zinc-200"
+              >
+                <div class="p-4 text-center font-bold">Tickets</div>
+                <div class="hidden group-open:block">
+                  <div
+                    class="relative p-4 text-center text-pink-200 transition-colors ease-in-out hover:bg-white/5 hover:text-zinc-200"
+                  >
+                    <span>Single Day Ticket</span>
+                  </div>
+                  <div
+                    class="relative p-4 text-center text-pink-200 transition-colors ease-in-out hover:bg-white/5 hover:text-zinc-200"
+                  >
+                    <span>7 Day Ticket</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="relative flex cursor-pointer items-center justify-center p-4 font-bold text-pink-200 transition-colors ease-in-out hover:bg-white/10 hover:text-zinc-200"
+              >
+                <span>Support</span>
+              </div>
+            </div>
+          </div>
+          <div class="hidden items-center md:flex">
+            <div class="menu-item">
+              <span>Home</span>
+            </div>
+            <div class="menu-item">
+              <span>Lineup</span>
+            </div>
+            <div class="menu-item group">
+              <span>Tickets</span>
+              <div
+                class="absolute top-full right-0 hidden whitespace-nowrap rounded-b bg-pink-500 text-right group-hover:block"
+              >
+                <div
+                  class="cursor-pointer p-4 font-bold text-pink-200 transition-colors ease-in-out hover:bg-white/5 hover:text-zinc-200"
+                >
+                  <span>Single Day Ticket</span>
+                </div>
+                <div
+                  class="cursor-pointer p-4 font-bold text-pink-200 transition-colors ease-in-out hover:bg-white/5 hover:text-zinc-200"
+                >
+                  <span>7 Day Ticket</span>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item">
+              <span>Support</span>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </main>
+  </body>
 </html>
