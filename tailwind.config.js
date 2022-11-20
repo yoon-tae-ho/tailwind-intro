@@ -1,6 +1,7 @@
 const openVariant = require("./plugins/openVariant");
 const animationDelay = require("./plugins/animationDelay");
 const tableCaption = require("./plugins/tableCaption");
+const buttonPlugin = require("./plugins/buttonPlugin");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -24,5 +25,5 @@ module.exports = {
       },
     },
   },
-  plugins: [openVariant, animationDelay, tableCaption],
+  plugins: [openVariant, animationDelay, tableCaption, buttonPlugin],
 };
